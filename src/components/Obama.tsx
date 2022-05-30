@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Obama()
 {
-    return (<div>
-        I am Barack Obama
-    </div>);
+    const navigate = useNavigate();
+    return (<>
+        <div>Hello i am Barack Obama</div>
+        <button onClick = {()=> navigate("/Sachin")} > Go To Sachin</button>       
+         </>);
 }
