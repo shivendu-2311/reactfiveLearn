@@ -1,8 +1,20 @@
 .addButton
 {
+  
   background-color: red;
 }
 .subButton
 {
   background-color: aqua;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.image{
+  width: 50px;
+  height: 50px;
+}
+.containers{
+  flex-direction: column;
 }
