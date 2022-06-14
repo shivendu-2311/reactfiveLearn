@@ -1,22 +1,20 @@
-import { useEffect } from "react"
-
-interface IHotel{
-    name : string,
-    cusinee : string,
-    featured_image : string,
-    id: string
-}
-
-
-export default function Hotels(){
-
-useEffect(()=>{
-    async function api(){
-        const response = await fetch('./hotels.json')
-        const json :{restaurants : IHotel}[] = await response.json();
-        console.log(json.map(x => x.restaurants));
+import {AppBar, Button, Card, CardActionArea,  CardContent, CardMedia, CircularProgress, Fab, Grid, makeStyles, TextField, Typography} from "@material-ui/core"
+import { IHotel } from "./HotelSlice"
+const useStyles = makeStyles({
+    image:{
+      height : "300px",
+      width: "300px"
     }
-    
-},[])
-return(<div>Hotels</div>);
+});
+export default function Hotel(props: IHotel){
+    const style = useStyles();
+    return(
+        <Card>
+            <CardMedia className={style.image} image={props.featured_image}/>
+            <CardContent>
+            <Typography variant="h5">{props.name}</Typography>
+            <Typography variant="body1">{props.cuisines}</Typography>
+            </CardContent>
+        </Card>
+    )
 }

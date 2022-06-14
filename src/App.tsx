@@ -14,8 +14,10 @@ import UseEffectTwo from "./components/UseEffectTwo";
 import UserParams from "./components/UserParams";
 import { configureStore } from "./components/AppState";
 import { Provider } from "react-redux";
-import Hotels from "./components/Hotel";
 import ReduxExample from "./components/ReduxExample";
+import MaterialUIExample from "./components/MaterialUIExample";
+import Hotels from "./components/Hotels";
+
 export default function App() {
   return (
     <Provider store={configureStore()}>
@@ -46,6 +48,12 @@ export default function App() {
          { /* reducer saves no of api call made to backend it saves data in front end after 1st api call and then it is present for
          sometime in frontend*/} 
         <Route path="/reducerexample" element={<ReduxExample />} />
+
+        {/* project*/}
+        <Route path="/hotels" element={<Hotels/>}/>
+        {/* MaterialUIExample */}\
+
+        <Route path="/MaterialUIExample" element={<MaterialUIExample />} />
       </Routes>
     </BrowserRouter>
     </Provider>
